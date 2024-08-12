@@ -1,0 +1,31 @@
+/* components/LuloAccount.module.css */
+.container {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+
+.infoItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.infoItem span {
+    font-size: 16px;
+}
+
+.infoItem span:first-child {
+    font-weight: bold;
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.subtitle {
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
