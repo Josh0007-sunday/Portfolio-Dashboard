@@ -1,3 +1,4 @@
+"use client";
 import { Connection, PublicKey, ParsedTransactionWithMeta, ParsedInstruction, PartiallyDecodedInstruction } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react';
 

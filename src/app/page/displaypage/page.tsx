@@ -15,10 +15,7 @@ const WalletContextProvider = dynamic(
 const HomePage: React.FC = () => {
   return (
     <WalletContextProvider>
-      <Header />
       <Dashboard />
-      <Terminal/>
-      <NFTDisplay />
     </WalletContextProvider>
   );
 };

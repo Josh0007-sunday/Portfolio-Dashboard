@@ -11,17 +11,16 @@ const WalletMultiButton = dynamic(
 
 const Header: React.FC = () => {
   console.log("Rendering Header component");
-
   return (
-    <div className="header">
+    <header className="header">
       <Image className="logo" src={logo} alt="Logo" />
-      <div className="profile">
-        <Image className="profile-pic" src={logo} alt="Profile" />
+      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <div className="profile">
+          <Image className="profile-pic" src={logo} alt="Profile" />
+        </div>
+        <WalletMultiButton className="wallet-button" />
       </div>
-      <div> {/* Temporary border for debugging */}
-        <WalletMultiButton />
-      </div>
-    </div>
+    </header>
   );
 };
 

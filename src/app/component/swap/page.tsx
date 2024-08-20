@@ -122,56 +122,59 @@ export default function Swap() {
   }
 
   return (
-    <div className={styles.body}>
-      <div className={styles.innerContainer}>
-        <div className={styles.inputContainer}>
-          <div className={styles.labels}>You pay</div>
-          <input
-            type="number"
-            value={fromAmount}
-            onChange={handleFromValueChange}
-            className={styles.inputField}
-          />
-          <select
-            value={fromAsset.name}
-            onChange={handleFromAssetChange}
-            className={styles.selectField}
+    <div className='project'>
+      <div className={styles.body}>
+        <div className={styles.innerContainer}>
+          <div className={styles.inputContainer}>
+            <div className={styles.labels}>You pay</div>
+            <input
+              type="number"
+              value={fromAmount}
+              onChange={handleFromValueChange}
+              className={styles.inputField}
+            />
+            <select
+              value={fromAsset.name}
+              onChange={handleFromAssetChange}
+              className={styles.selectField}
+            >
+              {assets.map((asset) => (
+                <option key={asset.mint} value={asset.name}>
+                  {asset.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className={styles.inputContainer}>
+            <div className={styles.labels}>You receive</div>
+            <input
+              type="number"
+              value={toAmount}
+              className={styles.inputField}
+              readOnly
+            />
+            <select
+              value={toAsset.name}
+              onChange={handleToAssetChange}
+              className={styles.selectField}
+            >
+              {assets.map((asset) => (
+                <option key={asset.mint} value={asset.name}>
+                  {asset.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button
+            onClick={signAndSendTransaction}
+            className={styles.button}
+            disabled={toAsset.mint === fromAsset.mint}
           >
-            {assets.map((asset) => (
-              <option key={asset.mint} value={asset.name}>
-                {asset.name}
-              </option>
-            ))}
-          </select>
+            Swap
+          </button>
         </div>
-        <div className={styles.inputContainer}>
-          <div className={styles.labels}>You receive</div>
-          <input
-            type="number"
-            value={toAmount}
-            className={styles.inputField}
-            readOnly
-          />
-          <select
-            value={toAsset.name}
-            onChange={handleToAssetChange}
-            className={styles.selectField}
-          >
-            {assets.map((asset) => (
-              <option key={asset.mint} value={asset.name}>
-                {asset.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button
-          onClick={signAndSendTransaction}
-          className={styles.button}
-          disabled={toAsset.mint === fromAsset.mint}
-        >
-          Swap
-        </button>
       </div>
     </div>
+
   );
 }

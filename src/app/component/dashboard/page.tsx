@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { PieChart } from "@mui/x-charts/PieChart";
 import { useWallet, useConnection } from '@solana/wallet-adapter-react';
@@ -124,7 +125,7 @@ const Dashboard: React.FC = () => {
   }
 
   return (
-    <div className="project">
+  <div className="project">
       <section className="section">
         <section className="titletext">
           <h1>Dashboard</h1>
@@ -135,7 +136,7 @@ const Dashboard: React.FC = () => {
         <div className="pcontainer">
           <div className="projectcard">
             <p className="titletxt">Net Worth:</p>
-            <button onClick={toggleBalance} className="toggle-btn">
+            <button onClick={toggleBalance} className="con-btn2">
               {showBalance ? <FaEyeSlash /> : <FaEye />}{" "}
               {showBalance ? "Hide Balance" : "View Balance"}
             </button>
@@ -195,7 +196,7 @@ const Dashboard: React.FC = () => {
             ) : (
               <ul className="transaction-list">
                 {transactions.map((tx) => (
-                  <li key={tx.signature} className="transaction-item">
+                  <li key={tx.signature} className="transaction">
                     <span>{tx.message}</span>
                     <span>{tx.status}</span>
                     <a

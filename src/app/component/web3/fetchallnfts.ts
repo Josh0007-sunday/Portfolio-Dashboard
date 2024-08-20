@@ -1,5 +1,5 @@
 // File: web3/fetchallnfts.ts
-
+"use client";
 import { Connection, PublicKey } from '@solana/web3.js';
 import { programs } from '@metaplex/js';
 

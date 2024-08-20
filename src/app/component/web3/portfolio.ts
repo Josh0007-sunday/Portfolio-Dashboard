@@ -1,3 +1,4 @@
+"use client";
 import { Connection, PublicKey, StakeProgram } from "@solana/web3.js";
 import axios from 'axios';
 import { programs } from '@metaplex/js';

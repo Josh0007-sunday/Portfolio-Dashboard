@@ -46,9 +46,12 @@ function Terminal() {
 
   return (
     <WalletContextProvider>
-      <div className={styles.body}>
+      <div className='project'>
+         <div className={styles.body}>
         <div id="integrated-terminal"></div>
       </div>
+      </div>
+     
     </WalletContextProvider>
 
   );
