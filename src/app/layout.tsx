@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Inter } from "next/font/google";
+import Script from 'next/script';
 import Header from './component/header/page'; // Adjust the import path as needed
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
@@ -37,15 +38,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script src="https://terminal.jup.ag/main-v2.js" data-preload></script>
-      </head>
+      <head></head>
       <body className={inter.className}>
         <AppWrapper>
           <Header />
           <Navbar />
           {children}
         </AppWrapper>
+
+        {/* Load the script asynchronously */}
+        <Script
+          src="https://terminal.jup.ag/main-v2.js"
+          strategy="lazyOnload" // Loads the script after page load
+        />
       </body>
     </html>
   );
